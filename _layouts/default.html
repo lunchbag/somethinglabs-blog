@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %} {{ page.title }} | something Blogs {% else %}something Blogs{% endif %}</title>
+
+  <meta property="og:title" content="{% if page.title %} {{ page.title }} | {% endif %} something Blogs" />
+
+  <meta property="og:description" content="{{ post.excerpt }}" />
+  <meta property="og:site_name" content="something Blogs" />
+
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}" />
+
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="/assets/img/favicon32.png">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.theme.name }}" href="{{site.url}}/atom.xml" />
+
+  <link rel="stylesheet" href="/assets/css/all.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+
+    </div>
+  </header>
+
+  <div class="container">
+    {{ content }}
+    {% include footer.html %}
+  </div>
+
+{% include analytics.html %}
+</body>
+</html>

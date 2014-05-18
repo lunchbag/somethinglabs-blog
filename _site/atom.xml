@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>something Blogs</title>
+ <link href="http://somethinglabs-blog.herokuapp.com/atom.xml" rel="self"/>
+ <link href="http://somethinglabs-blog.herokuapp.com"/>
+ <updated>2014-05-17T18:41:45-07:00</updated>
+ <id>http://somethinglabs-blog.herokuapp.com</id>
+ <author>
+   <name></name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Moving from a distributed Scala-based services-oriented architecture to a monolithic Ruby on Rails app</title>
+   <link href="http://somethinglabs-blog.herokuapp.com/uber-launches-new-line-of-transportation-services"/>
+   <updated>2014-05-17T00:00:00-07:00</updated>
+   <id>http://somethinglabs-blog.herokuapp.com/uber-launches-new-line-of-transportation-services</id>
+   <content type="html">&lt;p&gt;Text here.&lt;/p&gt;</content>
+ </entry>
+ 
+
+</feed>
