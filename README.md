@@ -1,18 +1,30 @@
-Extracted lovingly from [http://mdswanson.com][mds] for your enjoyment!
+dbyll
+=====
 
-* Responsive, based on [Skeleton][skeleton]
-* [Font Awesome][font-awesome] for icons
-* Open Sans from [Google web fonts][gfonts]
-* Built-in Atom RSS feed
+Open source stylish, minimalistic theme for jekyll.  
+Demo: http://dbtek.github.io/dbyll/
 
---
-## How to post an article.
+### Features
+- Pagination. (New)
+- Syntax highlighting with pygments. (New)
+- Responsive layout.
+- Supports tags and categories.
+- Social profile and bio of author.
+- Bootstrap based.
+- Glyphicon and Font-Awesome Icons.
 
-1. Move file from _drafts to _posts
-2. Append date in 'YYYY-MM-DD-' format to the filename
-3. Change 'published' flag from false to true
-4. Run 'jekyll build' from the command line
-5. Push changes to heroku/origin (make sure to add all)
---
 
-**jekyll serve --watch** for quick development mode!
+### Download
+* [Download dbyll](https://github.com/dbtek/dbyll/archive/master.zip)
+
+### Snapshots
+
+![dbyll-screenshot](http://dbtek.github.io/dbyll/assets/media/dbyll-ss.png)
+
+### License
+- [MIT](http://opensource.org/licenses/MIT)
+
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dbtek/dbyll/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+

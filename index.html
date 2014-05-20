@@ -1,45 +1,75 @@
 ---
-layout: default
+layout: page
+title: dbyll
+tagline:
 ---
 
-<div id="home">
-  <div class="posts">
-    {% for post in paginator.posts %}
-      <div class="post">
-        <div class="meta">
-          <span>
-            {% for category_name in post.categories limit:1 %}
-              <span class="category">{{ category_name }}</span> &#183;
-            {% endfor %}
-            {{ post.date | date_to_string }}
-          </span>
-        </div>
+{% for post in paginator.posts %}
 
-        <a class="title" href="{{ post.url }}">{{ post.title }}</a>
-        <div class="body">
-          {% if post.image %}
-            <img class="post-image" src="{{ post.image }}">
-          {% endif %}
-          <span class="location">{{ post.location }}</span>— {{ post.content }}</div>
-        <div class="share">
-          <!-- FACEBOOK -->
-          <div class="fb-like" data-href="{{ post.url }}" data-layout="button_count" data-action="recommend" data-show-faces="true" data-share="true"></div>
-          <!-- TWITTER -->
-          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://thebubble.cc{{post.url}}" data-text="{{ post.title }}" data-via="thebubblecc">Tweet</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-</div>
+        <article class="home">
 
-<!-- Pagination links -->
-<div class="pagination">
+            <span class="post-date">
+                {% assign d = post.date | date: "%d" | plus:'0' %}
+                {{ post.date | date: "%B" }}
+                {% case d %}
+                  {% when 1 or 21 or 31 %}{{ d }}st,
+                  {% when 2 or 22 %}{{ d }}nd,
+                  {% when 3 or 23 %}{{ d }}rd,
+                  {% else %}{{ d }}th,
+                {% endcase %}
+                {{ post.date | date: "%Y" }}
+            </span>
+
+            <h2>
+                <a href="{{ site.BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+            </h2>
+
+            <div>
+                {% if post.fullview %}
+                  {{ post.content }}
+                {% else %}
+                    {% if post.shortinfo %}
+                        {{ post.shortinfo }}
+                    {% elsif post.description %}
+                        {{ post.description }}
+                    {% else %}
+                        {{ post.excerpt }}
+                    {% endif %}
+                {% endif %}
+            </div>
+
+        </article>
+{% endfor %}
+<hr/>
+
+<ul class="pager"> 
+
   {% if paginator.previous_page %}
-    <a href="/{{ paginator.previous_page }}" class="previous">← Newer</a>
+    <li class="previous">
+      {% if paginator.previous_page == 1 %}
+        <a href="{{ site.BASE_PATH }}/">&larr; Newer</a>
+      {% else %}
+        <a href="{{ site.BASE_PATH }}/page{{ paginator.previous_page }}">&larr; Newer</a>
+      {% endif %}
+    </li>
+  {% else %}
+    <li class="previous disabled">
+      <a>&larr; Newer</a>
+    </li>
   {% endif %}
-  <span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
+  
+  <li>
+          <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  </li>
+
   {% if paginator.next_page %}
-    <a href="/{{ paginator.next_page }}" class="next">Older →</a>
+    <li class="next">
+            <a href="{{ site.BASE_PATH }}/page{{ paginator.next_page }}">Older &rarr;</a>
+    </li>
+  {% else %}
+    <li class="next disabled">
+            <a>Older &rarr;</a>        
+    </li>
   {% endif %}
-</div>
+
+</ul>
