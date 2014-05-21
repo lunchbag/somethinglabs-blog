@@ -1,6 +1,6 @@
 # General Jekyll Config
 pygments: true
-url: http://somethinglabs-blog.herokuapp.com
+url: http://blog.somethinglabs.com
 lsi: false
 paginate: 5
 paginate_path: ":num"
@@ -18,5 +18,4 @@ rss_path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
 
-BASE_PATH: http://dbtek.github.io/dbyll
 ROOT_PATH: http://blog.somethinglabs.com
